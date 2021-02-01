@@ -5,12 +5,13 @@
     if ((isset($_POST['email'])) && (isset($_POST['senha']))) {
         # code...
         $usuario = mysqli_real_escape_string($conn, $_POST['email']);
-        $senha =   myssqli_real_escape_string($conn, $_POST['senha']);
+        $senha =   mysqli_real_escape_string($conn, $_POST['senha']);
         $senha = md5($senha);
 
-        $result_usuario = "SELECT * FROM usuario WHERE email = '$usuario' && senha= '$senha' LIMIT 1";
+        $result_usuario = "SELECT * FROM usuarios WHERE email = '$usuario' && senha= '$senha' LIMIT 1";
         $resultado_usuario = mysqli_query($conn, $result_usuario);
-        $resultado = mysql_fetch_assoc($resultado_usuario);
+        $resultado = mysqli_fetch_assoc($resultado_usuario);
+        
 
         if (isset($resultado)) {
             # code...
