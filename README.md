@@ -1,0 +1,1 @@
+Sistema de login em PHP com redirecionamento de nível de acesso e senha criptografada com MD5.
